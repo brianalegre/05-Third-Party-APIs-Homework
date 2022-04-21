@@ -31,37 +31,14 @@ function makeTimeblocks(hour, existingTodo = ""){
 }
 
 
-
 // Create time block for each hour
 for(var i = 0; i < 9 ; i++){
     makeTimeblocks(i);
 }
 
-
-// Cycle thru save buttons
-// for (var i = 0; i < btnEl.length; i++ ) {
-//     // add callback function for click
-//     btnEl.addEventListener("click", saveClicked);
-//     alert('clickme')
-// }
-
-// works
 var btnEl = document.querySelectorAll(".btn")
-
+// Check each button
 console.log(btnEl)
-
-// // Cycle thru save buttons
-// for (var i = 0; btnEl.length; i++) {
-//     btnEl[i].addEventListener("click", function(){
-        
-//         // Verify each click works
-//         alert("clicked me")
-//     })
-// }
-
-// btnEl.addEventListener('click', function(){
-//     alert('clicked')
-// })
 
 
 // Cycle thru save buttons
@@ -85,14 +62,3 @@ function functionForSaving (event) {
     localStorage.setItem(todoKey, todoValue);
 
 }
-
-
-
-// // Function for saving to local storage
-// function saveClicked(event){
-//     // Setting the Key Value pair
-//     var todoValue = event.target.parentNode.children[1].value;
-//     var todoKey = event.target.parentNode.children[1].id;
-//     // local storage
-//     localStorage.setItem(todoKey, todoValue);
-// }
