@@ -1,5 +1,4 @@
 // variables
-var btnEl = document.querySelectorAll(".btn")
 
 // Array of times
 var timeSlots = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"];
@@ -34,7 +33,7 @@ function makeTimeblocks(hour, existingTodo = ""){
 
 
 // Create time block for each hour
-for(var i = 0; i < 24; i++){
+for(var i = 0; i < 9 ; i++){
     makeTimeblocks(i);
 }
 
@@ -44,6 +43,22 @@ for (var i = 0; i < btnEl.length; i++ ) {
     // add callback function for click
     btnEl[i].addEventListener("click", saveClicked);
 }
+
+// works
+var btnEl = document.querySelectorAll(".btn")
+
+// console.log(btnEl)
+
+// //
+// for (var i = 0; btnEl.length; i++) {
+//     btnEl[i].addEventListener("click", function(){
+//         alert("clicked me")
+//     })
+// }
+
+// btnEl.addEventListener('click', function(){
+//     alert('clicked')
+// })
 
 
 // Function for saving to local storage
