@@ -39,19 +39,22 @@ for(var i = 0; i < 9 ; i++){
 
 
 // Cycle thru save buttons
-for (var i = 0; i < btnEl.length; i++ ) {
-    // add callback function for click
-    btnEl[i].addEventListener("click", saveClicked);
-}
+// for (var i = 0; i < btnEl.length; i++ ) {
+//     // add callback function for click
+//     btnEl.addEventListener("click", saveClicked);
+//     alert('clickme')
+// }
 
 // works
 var btnEl = document.querySelectorAll(".btn")
 
-// console.log(btnEl)
+console.log(btnEl)
 
-// //
+// // Cycle thru save buttons
 // for (var i = 0; btnEl.length; i++) {
 //     btnEl[i].addEventListener("click", function(){
+        
+//         // Verify each click works
 //         alert("clicked me")
 //     })
 // }
@@ -61,11 +64,25 @@ var btnEl = document.querySelectorAll(".btn")
 // })
 
 
-// Function for saving to local storage
-function saveClicked(event){
-    // Setting the Key Value pair
-    var todoValue = event.target.parentNode.children[1].value;
-    var todoKey = event.target.parentNode.children[1].id;
-    // local storage
-    localStorage.setItem(todoKey, todoValue);
+// Cycle thru save buttons
+for (var i = 0; btnEl.length; i++) {
+    btnEl[i].addEventListener("click", functionForSaving)
+}     
+        // Verify each click works
+        // alert("clicked me")
+
+
+function functionForSaving (event) {
+    console.log("target", event.target.parentNode.children[1].value)
 }
+
+
+
+// // Function for saving to local storage
+// function saveClicked(event){
+//     // Setting the Key Value pair
+//     var todoValue = event.target.parentNode.children[1].value;
+//     var todoKey = event.target.parentNode.children[1].id;
+//     // local storage
+//     localStorage.setItem(todoKey, todoValue);
+// }
