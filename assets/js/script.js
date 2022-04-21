@@ -14,6 +14,8 @@ function makeTimeblocks(hour, existingTodo = ""){
     if (currentHour > hour) presentPastOrFuture = "past";
     if (currentHour === hour) presentPastOrFuture = "present";
     var hourName = timeSlots[hour];
+
+    // Get items from localStorage to display on the page
     var existingTodo = localStorage.getItem(hourName);
 
     // Creating the time block
@@ -22,9 +24,7 @@ function makeTimeblocks(hour, existingTodo = ""){
     $(`
     <div class="row time-block">
         <div class="hour col-1">${hourName}</div>
-        <textarea name="" id="${hourName}" cols="30" rows="3" class="description col-9 ${presentPastOrFuture}">${
-        existingTodo || ""
-    }</textarea>
+        <textarea name="" id="${hourName}" cols="30" rows="3" class="description col-9 ${presentPastOrFuture}">${existingTodo || ""}</textarea>
         <button class="btn saveBtn col-2">Save</button>
     </div>`)
     );
@@ -73,7 +73,17 @@ for (var i = 0; btnEl.length; i++) {
 
 
 function functionForSaving (event) {
-    console.log("target", event.target.parentNode.children[1].value)
+    // Checking able to get text area content
+    // console.log("target", event.target.parentNode.children[1].value)
+    var todoValue = event.target.parentNode.children[1].value
+    var todoKey = event.target.parentNode.children[1].id
+
+    // check values
+    console.log("key values" + todoKey, todoValue)
+
+    // Store to localStorage
+    localStorage.setItem(todoKey, todoValue);
+
 }
 
 
