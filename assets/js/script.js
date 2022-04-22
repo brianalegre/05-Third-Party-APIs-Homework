@@ -61,3 +61,6 @@ function functionForSaving (event) {
     // Store to localStorage
     localStorage.setItem(todoKey, todoValue);
 }
+
+// Display current day
+$('#currentDay').text(moment().format('dddd, MMMM Do'));
