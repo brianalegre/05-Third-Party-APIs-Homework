@@ -21,14 +21,10 @@ function makeTimeblocks(hour, existingTodo = "") {
     $(`
     <div class="row time-block">
         <div class="hour col-1">${hourName}</div>
-        <textarea name="" id="${hourName}" cols="30" rows="3" class="description col-9 ${presentPastOrFuture}">${
-    existingTodo || ""
-    }</textarea>
+        <textarea name="" id="${hourName}" cols="30" rows="3" class="description col-9 ${presentPastOrFuture}">${existingTodo || ""}</textarea>
         <button class="btn saveBtn col-2">Save</button>
     </div>`)
     );
-
-
 }
 
 // Create time block for each hour
@@ -55,6 +51,7 @@ function functionForSaving(event) {
     // Store to localStorage
     localStorage.setItem(todoKey, todoValue);
 }
+
 
 // Display current day
 $('#currentDay').text(moment().format('dddd, MMMM Do'));
