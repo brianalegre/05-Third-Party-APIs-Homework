@@ -4,7 +4,7 @@ var btnEl = document.querySelectorAll(".btn")
 // console.log(btnEl)
 
 // Array of times
-var timeSlots = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"];
+var timeSlots = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
 // Check timeSlots
 // console.log(timeSlots)
 
@@ -36,11 +36,9 @@ function makeTimeblocks(hour, existingTodo = ""){
 
 
 // Create time block for each hour
-for(var i = 0; i < 24 ; i++){
+for(var i = 0; i < 9 ; i++){
     makeTimeblocks(i);
 }
-
-
 
 
 // Cycle thru save buttons
@@ -62,5 +60,4 @@ function functionForSaving (event) {
 
     // Store to localStorage
     localStorage.setItem(todoKey, todoValue);
-
 }
