@@ -1,6 +1,3 @@
-// Variables
-var timeSlots = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
-
 // Function for making each time block
 function makeTimeblocks(hour, existingTodo = "") {
     // Get the current time
@@ -10,25 +7,25 @@ function makeTimeblocks(hour, existingTodo = "") {
     var presentPastOrFuture = "future";
     if (currentHour > hour) presentPastOrFuture = "past";
     if (currentHour === hour) presentPastOrFuture = "present";
-    var hourName = timeSlots[hour];
+    // var hourName = timeSlots[hour];
 
     // Get items from localStorage to display on the page
-    var existingTodo = localStorage.getItem(hourName);
+    var existingTodo = localStorage.getItem(hour);
 
     // Creating the time block
     // Using bootstap classes
     $(".container").append(
     $(`
     <div class="row time-block">
-        <div class="hour col-1">${hourName}</div>
-        <textarea name="" id="${hourName}" cols="30" rows="3" class="description col-9 ${presentPastOrFuture}">${existingTodo || ""}</textarea>
+        <div class="hour col-1">${hour}:00</div>
+        <textarea name="" id="${hour}" cols="30" rows="3" class="description col-9 ${presentPastOrFuture}">${existingTodo || ""}</textarea>
         <button class="btn saveBtn col-2">Save</button>
     </div>`)
     );
 }
 
 // Create time block for each hour
-for (var i = 0; i < 9; i++) {
+for (var i = 9; i < 18; i++) {
     makeTimeblocks(i);
 }
 
